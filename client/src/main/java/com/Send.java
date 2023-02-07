@@ -18,7 +18,7 @@ class Send implements Runnable {
     @Override
     public void run() {
         Scanner scanner = new Scanner(System.in);
-        String str = "";
+        String str;
         while (true) {
             if (!scanner.hasNextLine()) {continue;}
             str = scanner.nextLine();
@@ -44,11 +44,18 @@ class Send implements Runnable {
             try {
                 switch (command){
                     case "register":
-                        if (args.length != 2) {
-                            System.out.println("Command error! Please type: /register <username>");
+                        if (args.length != 6) {
+                            System.out.println("Command error! Please type: /register <username> <password> <age> <gender>(0:male 1:female) <address>");
                             break;
                         }
-                        format(writeThread,"Reg",args[1]);
+                        format(writeThread,"Reg",args[1]+"|"+args[2]+"|"+args[3]+"|"+args[4]+"|"+args[5]);
+                        break;
+                    case "login":
+                        if (args.length != 3) {
+                            System.out.println("Command error! Please type: /login <username> <password>");
+                            break;
+                        }
+                        format(writeThread,"Login",args[1]+"|"+args[2]);
                         break;
                     case "msg":
                         if (args.length != 3) {

@@ -29,21 +29,26 @@ public class ParseReceive {
         }
 
         String user = User.getUser(client);
-        if(user.isEmpty() && !inputs[0].equals("Reg")){
-            Send.format(client,"SysMsg","You haven't register! Type /register <username> to register in.");
+        if(user.isEmpty() && !inputs[0].equals("Reg") && !inputs[0].equals("Login")){
+            Send.format(client,"SysMsg","You haven't register or login! Type /register <username> <password> <age> <gender>(0:male 1:female) <address> to register in. Type /login <username> <password> to login.");
             return;
         }
         switch (inputs[0]){
             case "Reg":
-                User.register(inputs[1], client);
+                String[] regInputs = inputs[1].split("\\|");
+                User.register(regInputs[0], regInputs[1], regInputs[2], regInputs[3], regInputs[4], client);
+                return;
+            case "Login":
+                String[] loginInputs = inputs[1].split("\\|");
+                User.login(loginInputs[0], loginInputs[1], client);
                 return;
             case "List":
-                String msg ="Current USER\n";
+                StringBuilder msg = new StringBuilder("Current USER\n");
                 for(String key : clientMap.keySet()){
-                    msg+=" · " + key+ "\n";
+                    msg.append(" · ").append(key).append("\n");
                 }
-                msg+="All num: " + clientMap.size();
-                Send.format(client,"SysMsg",msg);
+                msg.append("All num: ").append(clientMap.size());
+                Send.format(client,"SysMsg", msg.toString());
                 return;
             case "Msg":
                 String text = inputs[1];

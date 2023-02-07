@@ -18,7 +18,8 @@ public class Client {
             } else {
                 client = new Socket("127.0.0.1", 9001);
             }
-            System.out.println("Connecting Server Success. Typing /register <username> to register in.");
+            System.out.println("Connecting Server Success. Typing /register <username> <password> <age> <gender>(0:male 1:female) <address> to register in.");
+            // /register 123 321 20 0 Street.1*
         } catch (IOException e) {
             System.out.println("Connecting Server Failed.");
             e.printStackTrace();

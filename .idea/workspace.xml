@@ -9,31 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/client_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/server_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/ParseReceive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/ReadThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/Send.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/WriteThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/ExecuteClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/ParseReceive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/Send.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/Chat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="Support basic chatting">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/Db.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Send.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/ParseReceive.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/ParseReceive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/implemention/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,20 +43,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-18&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.14941406&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "openjdk-18",
+    "last_opened_file_path": "D:/lib/mysql-connector-j-8.0.32.jar",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.14941406",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com" />
@@ -130,7 +120,18 @@
       <workItem from="1673582621177" duration="21917000" />
       <workItem from="1673616675098" duration="1376000" />
       <workItem from="1673618544034" duration="695000" />
+      <workItem from="1673682129789" duration="373000" />
+      <workItem from="1674535838332" duration="372000" />
+      <workItem from="1675770824684" duration="10384000" />
     </task>
+    <task id="LOCAL-00001" summary="Support basic chatting">
+      <created>1673682312435</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673682312435</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +148,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -158,6 +159,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Support basic chatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Support basic chatting" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
