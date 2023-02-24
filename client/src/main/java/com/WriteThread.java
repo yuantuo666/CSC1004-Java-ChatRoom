@@ -17,8 +17,9 @@ class WriteThread implements Runnable {
     private Socket client;
     private String content = "";
 
-    public WriteThread(Socket client) {
-        this.client = client;
+    public WriteThread() {
+        Client client = new Client();
+        this.client = client.client;
     }
 
     public synchronized void handle(String content){

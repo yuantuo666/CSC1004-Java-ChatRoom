@@ -10,26 +10,20 @@ package com;
 import java.io.IOException;
 import java.util.Scanner;
 
-class Send implements Runnable {
+class Send {
     private WriteThread writeThread;
 
     public Send(WriteThread writeThread){this.writeThread = writeThread;}
 
-    @Override
-    public void run() {
-        Scanner scanner = new Scanner(System.in);
-        String str;
-        while (true) {
-            if (!scanner.hasNextLine()) {continue;}
-            str = scanner.nextLine();
+    public void send(String command) {
 
-            String[] args = str.split(" ");
+            String[] args = command.split(" ");
 
             // Group Msg
-            if(!str.startsWith("/") || args.length == 0){
+            if(!command.startsWith("/") || args.length == 0){
                 try {
-                    format(writeThread,"Msg",str);
-                    continue;
+                    format(writeThread,"Msg",command);
+                    return;
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -40,9 +34,9 @@ class Send implements Runnable {
             //          /list
             // TODO     /login username
 
-            String command = args[0].substring(1);
+            String commands = args[0].substring(1);
             try {
-                switch (command){
+                switch (commands){
                     case "register":
                         if (args.length != 6) {
                             System.out.println("Command error! Please type: /register <username> <password> <age> <gender>(0:male 1:female) <address>");
@@ -77,10 +71,6 @@ class Send implements Runnable {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-//            if (str.contains("bye")) {
-//                scanner.close();
-//            }
-        }
 
     }
     public static void format(WriteThread server, String type, String msg) throws IOException {

@@ -28,6 +28,7 @@ public class ExecuteClient implements Runnable{
                     System.out.println(str);
                     ParseReceive.handle(str,client);
                 }
+
             }
         } catch (IOException e) {
             e.printStackTrace();

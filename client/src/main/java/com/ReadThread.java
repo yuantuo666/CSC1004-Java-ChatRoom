@@ -13,8 +13,9 @@ import java.util.Scanner;
 class ReadThread implements Runnable {
     private Socket client;
 
-    public ReadThread(Socket client) {
-        this.client = client;
+    public ReadThread() {
+        Client client = new Client();
+        this.client = client.client;
     }
 
     @Override
@@ -23,7 +24,15 @@ class ReadThread implements Runnable {
             Scanner in = new Scanner(client.getInputStream());
             while (true) {
                 if (in.hasNextLine()) {
-                    System.out.print(ParseReceive.handle(in.nextLine()));
+                    String[] Msg = ParseReceive.handle(in.nextLine());
+                    if (Msg[0] == null) continue;
+                    if (Msg[0]=="System Message"){
+                        // pop dialog
+                        new Dialog("System Message", Msg[1]).setVisible(true);
+                    }else {
+                        // add to chat windows
+                        new Dialog("TEST msg", Msg[1]).setVisible(true);
+                    }
                 }
                 if (client.isClosed()) {
                     break;

@@ -15,7 +15,10 @@ import net.miginfocom.swing.*;
  * @author Yuan_Tuo
  */
 public class Login extends JFrame {
+    public static Client client;
     public Login() {
+        Client client = new Client();
+        this.client = client;
         initComponents();
     }
 
@@ -25,9 +28,13 @@ public class Login extends JFrame {
     }
 
     private void login(ActionEvent e) {
-        // TODO add your code here
-        System.out.println("click login"+username.getText()+password.getText());
+        System.out.println(username.getText()+password.getText());
+        client.send.send("/login "+username.getText()+" "+password.getText());
+    }
 
+    private void register(ActionEvent e) {
+        client.register= new Register(client);
+        client.register.setVisible(true);
     }
 
     private void initComponents() {
@@ -39,14 +46,16 @@ public class Login extends JFrame {
         label3 = new JLabel();
         password = new JTextField();
         login = new JButton();
+        register = new JButton();
 
         //======== this ========
+        setTitle("ChatRoom Login");
         Container contentPane = getContentPane();
         contentPane.setLayout(new MigLayout(
             "hidemode 3",
             // columns
-            "[71,fill]" +
-            "[251,fill]" +
+            "[69,fill]" +
+            "[187,fill]" +
             "[60,fill]",
             // rows
             "[]" +
@@ -54,13 +63,14 @@ public class Login extends JFrame {
             "[]" +
             "[]" +
             "[]" +
-            "[]" +
-            "[]"));
+            "[20]" +
+            "[37]" +
+            "[28]"));
 
         //---- label1 ----
         label1.setText("ChatRoom Login");
         label1.setHorizontalAlignment(SwingConstants.CENTER);
-        label1.setFont(label1.getFont().deriveFont(label1.getFont().getSize() + 6f));
+        label1.setFont(label1.getFont().deriveFont(label1.getFont().getSize() + 8f));
         contentPane.add(label1, "cell 1 1");
 
         //---- label2 ----
@@ -77,6 +87,11 @@ public class Login extends JFrame {
         login.setText("Login");
         login.addActionListener(e -> login(e));
         contentPane.add(login, "cell 1 6");
+
+        //---- register ----
+        register.setText("Go To Register");
+        register.addActionListener(e -> register(e));
+        contentPane.add(register, "cell 1 7");
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
@@ -90,5 +105,6 @@ public class Login extends JFrame {
     private JLabel label3;
     private JTextField password;
     private JButton login;
+    private JButton register;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }

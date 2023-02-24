@@ -9,18 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="Support register and login, use MyQql as database.">
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/Login.jfd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/UserInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/miglayout-core-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/miglayout-core-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/miglayout-core.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/miglayout-swing-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/miglayout-swing-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/miglayout-swing.jar" afterDir="false" />
+    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="add login windows">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/Chatroom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/Chatroom.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/Dialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/Dialog.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/Register.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/Register.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Login.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Login.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/ParseReceive.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/ParseReceive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/ReadThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/ReadThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Send.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/WriteThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/WriteThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/ExecuteClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/ExecuteClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/implemention/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +80,7 @@
       <recent name="com" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Login">
+  <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Client" />
       <module name="client" />
@@ -136,10 +141,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Login" />
-        <item itemvalue="Application.UserInterface" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Login" />
+        <item itemvalue="Application.UserInterface" />
       </list>
     </recent_temporary>
   </component>
@@ -168,7 +173,7 @@
       <workItem from="1677159849213" duration="78000" />
       <workItem from="1677159940345" duration="185000" />
       <workItem from="1677160138740" duration="4667000" />
-      <workItem from="1677210473623" duration="646000" />
+      <workItem from="1677210473623" duration="8539000" />
     </task>
     <task id="LOCAL-00001" summary="Support basic chatting">
       <created>1673682312435</created>
@@ -184,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675783856029</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add login windows">
+      <created>1677211162995</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677211162995</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +228,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Support basic chatting" />
     <MESSAGE value="Support register and login, use MyQql as database." />
-    <option name="LAST_COMMIT_MESSAGE" value="Support register and login, use MyQql as database." />
+    <MESSAGE value="add login windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="add login windows" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.net.ConnectException" package="java.net" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

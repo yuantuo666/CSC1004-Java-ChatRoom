@@ -5,15 +5,16 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
 			"$layoutConstraints": "hidemode 3"
-			"$columnConstraints": "[71,fill][251,fill][60,fill]"
-			"$rowConstraints": "[][][][][][][]"
+			"$columnConstraints": "[69,fill][187,fill][60,fill]"
+			"$rowConstraints": "[][][][][][20][37][28]"
 		} ) {
 			name: "this"
+			"title": "ChatRoom Login"
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
 				"text": "ChatRoom Login"
 				"horizontalAlignment": 0
-				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 6, false )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 8, false )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 1"
 			} )
@@ -46,9 +47,16 @@ new FormModel {
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 6"
 			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "register"
+				"text": "Go To Register"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "register", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 7"
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 400, 300 )
+			"size": new java.awt.Dimension( 320, 315 )
 		} )
 	}
 }

@@ -56,7 +56,7 @@ public class User {
             Db.conn.close();
         } catch (SQLException e) {
             Send.format(client,"SysMsg","Register fail! Maybe the username had been used.");
-            throw new RuntimeException(e);
+//            throw new RuntimeException(e);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);
