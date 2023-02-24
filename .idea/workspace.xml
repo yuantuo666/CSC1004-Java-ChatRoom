@@ -9,15 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="Support basic chatting">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/Db.java" afterDir="false" />
+    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="Support register and login, use MyQql as database.">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/Login.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/UserInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-core-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-core-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-core.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-swing-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-swing-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-swing.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Send.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/ParseReceive.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/ParseReceive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/implemention/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,17 +48,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-18",
-    "last_opened_file_path": "D:/lib/mysql-connector-j-8.0.32.jar",
+    "last_opened_file_path": "C:/Users/Yuan_Tuo/IdeaProjects/ChatRoom",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.14941406",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -68,9 +75,22 @@
       <recent name="com" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Login">
     <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Client" />
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Login" />
       <module name="client" />
       <extension name="coverage">
         <pattern>
@@ -95,12 +115,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.UserInterface" />
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.Login" />
+      <item itemvalue="Application.UserInterface" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Server" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Login" />
+        <item itemvalue="Application.UserInterface" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.Server" />
       </list>
@@ -122,7 +159,16 @@
       <workItem from="1673618544034" duration="695000" />
       <workItem from="1673682129789" duration="373000" />
       <workItem from="1674535838332" duration="372000" />
-      <workItem from="1675770824684" duration="10384000" />
+      <workItem from="1675770824684" duration="10725000" />
+      <workItem from="1676002081104" duration="143000" />
+      <workItem from="1677158183859" duration="1229000" />
+      <workItem from="1677159563851" duration="170000" />
+      <workItem from="1677159747781" duration="43000" />
+      <workItem from="1677159803109" duration="32000" />
+      <workItem from="1677159849213" duration="78000" />
+      <workItem from="1677159940345" duration="185000" />
+      <workItem from="1677160138740" duration="4667000" />
+      <workItem from="1677210473623" duration="646000" />
     </task>
     <task id="LOCAL-00001" summary="Support basic chatting">
       <created>1673682312435</created>
@@ -131,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673682312435</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Support register and login, use MyQql as database.">
+      <created>1675783856029</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675783856029</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +215,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Support basic chatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Support basic chatting" />
+    <MESSAGE value="Support register and login, use MyQql as database." />
+    <option name="LAST_COMMIT_MESSAGE" value="Support register and login, use MyQql as database." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

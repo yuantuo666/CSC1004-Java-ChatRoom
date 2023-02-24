@@ -12,6 +12,7 @@ import java.net.Socket;
 public class Client {
     public static void main(String[] args) {
         Socket client;
+        // first: try to connect server
         try {
             if (args.length == 1) {
                 client = new Socket(args[0], 9001);
@@ -26,10 +27,12 @@ public class Client {
             return;
         }
         Thread readThread = new Thread(new ReadThread(client)); // receive msg
+        readThread.start();
+
         WriteThread writeThreadRaw = new WriteThread(client);
         Thread writeThread = new Thread(writeThreadRaw);
-        readThread.start();
         writeThread.start();
+
         Thread parseInput = new Thread(new Send(writeThreadRaw));
         parseInput.start();
 
