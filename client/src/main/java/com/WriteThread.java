@@ -35,6 +35,7 @@ class WriteThread implements Runnable {
             while (true) {
                 synchronized(this){
                     if (this.content.isEmpty()){
+                        Thread.sleep(1);
                         continue;
                     }
                     str = this.content;
@@ -51,6 +52,8 @@ class WriteThread implements Runnable {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 }

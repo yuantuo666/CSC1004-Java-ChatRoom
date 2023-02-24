@@ -16,6 +16,7 @@ public class Client {
     public static Socket client;
     public static Login login;
     public static Register register;
+    public static Chatroom chatroom;
 
     public static void main(String[] args) {
         // create a client

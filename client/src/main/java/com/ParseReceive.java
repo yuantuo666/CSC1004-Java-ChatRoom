@@ -23,17 +23,6 @@ public class ParseReceive {
 
         switch (inputs[0]){
             case "SysMsg":
-                Client client = new Client();
-                if (inputs[1].contains("Login success")){
-                    // destroy login windows
-                    client.login.dispose();
-                    // loading chat windows
-                    
-                }
-                if (inputs[1].contains("Register success")){
-                    // destroy login windows
-                    client.register.dispose();
-                }
                 return new String[]{"System Message", inputs[1]};
             case "Msg":
                 return new String[]{inputs[2], inputs[1]};

@@ -5,13 +5,42 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
 			"$layoutConstraints": "hidemode 3"
-			"$columnConstraints": "[fill][fill]"
-			"$rowConstraints": "[][][]"
+			"$columnConstraints": "[fill][615,fill][82,fill]"
+			"$rowConstraints": "[][333][][]"
 		} ) {
 			name: "this"
+			"title": "ChatRoom"
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosed", "thisWindowClosed", true ) )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				"minimumSize": new java.awt.Dimension( 16, 400 )
+				add( new FormComponent( "javax.swing.JTextPane" ) {
+					name: "ReceiveText"
+					"minimumSize": new java.awt.Dimension( 7, 230 )
+					"editable": false
+				} )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 1 2 1"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane2"
+				"minimumSize": new java.awt.Dimension( 16, 100 )
+				add( new FormComponent( "javax.swing.JEditorPane" ) {
+					name: "SendText"
+				} )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 2 2 1"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "send"
+				"text": "Send"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "send", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 3"
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 400, 300 )
+			"size": new java.awt.Dimension( 680, 555 )
 		} )
 	}
 }
