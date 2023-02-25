@@ -15,7 +15,7 @@ public class Db {
     public Db() throws SQLException, ClassNotFoundException {
         String driverName = "com.mysql.cj.jdbc.Driver";
 
-        String dbURL="jdbc:mysql://localhost:3306/chatroom?&useSSL=false&serverTimezone=Asia/Shanghai";
+        String dbURL="jdbc:mysql://localhost:3306/chatroom?&useSSL=false&serverTimezone=Asia/Shanghai&autoReconnect=true";
         String userName = "root";
         String userPwd = "root";
 

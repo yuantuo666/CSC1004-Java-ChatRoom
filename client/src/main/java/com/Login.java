@@ -32,6 +32,13 @@ public class Login extends JFrame {
         client.register.setVisible(true);
     }
 
+    private void thisWindowClosing(WindowEvent e) {
+        if (client.chatroom == null){
+            Client.send.send("/bye");
+            System.exit(0);
+        }
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         // Generated using JFormDesigner Evaluation license - yuantuo666
@@ -45,6 +52,12 @@ public class Login extends JFrame {
 
         //======== this ========
         setTitle("ChatRoom Login");
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                thisWindowClosing(e);
+            }
+        });
         Container contentPane = getContentPane();
         contentPane.setLayout(new MigLayout(
             "hidemode 3",

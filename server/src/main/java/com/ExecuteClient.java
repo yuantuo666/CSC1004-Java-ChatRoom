@@ -23,7 +23,6 @@ public class ExecuteClient implements Runnable{
             Scanner in = new Scanner(client.getInputStream());
 
             while((str = in.nextLine()) != null){
-                System.out.println(str);
                 ParseReceive.handle(str,client);
             }
         } catch (IOException e) {

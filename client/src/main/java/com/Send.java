@@ -61,6 +61,12 @@ class Send {
                     case "list":
                         format(writeThread,"List","");
                         break;
+                    case "heartbeat":
+                        format(writeThread,"Heartbeat","");
+                        break;
+                    case "bye":
+                        format(writeThread,"Bye","");
+                        break;
                     case "help":
                         System.out.println("Supported command are listed below\n > Public Message: <msg>\n > Register: /register <username>\n > Secret Message: /msg <username> <msg>");
                         break;

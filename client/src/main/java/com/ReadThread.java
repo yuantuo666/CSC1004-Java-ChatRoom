@@ -36,12 +36,12 @@ class ReadThread implements Runnable {
                 if (Msg[0] == null) continue;
                 if (Msg[0]=="System Message"){
                     if (Msg[1].contains("Login success")){
-                        // destroy login windows
-                        client.login.dispose();
                         // loading chat windows
                         Chatroom chatroom = new Chatroom();
                         chatroom.setVisible(true);
                         client.chatroom = chatroom;
+                        // destroy login windows
+                        client.login.dispose();
                     }
                     if (Msg[1].contains("Register success")){
                         // destroy login windows
@@ -57,7 +57,8 @@ class ReadThread implements Runnable {
                 System.out.println(Msg[0]+ " " +sdf.format(date) +"\n"+Msg[1]);
                 if(client.chatroom != null) client.chatroom.receive(Msg[0]+ " " +sdf.format(date) +"\n"+Msg[1]+"\n");
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
+            new Dialog("System Message", "Server is closed").setVisible(true);
             e.printStackTrace();
         }
 

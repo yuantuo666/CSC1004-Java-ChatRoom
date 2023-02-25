@@ -9,15 +9,16 @@ package com.Controller;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
-import org.springframework.http.ResponseEntity;
+import com.implemention.User;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.Server.clientMap;
 
 @RestController
 public class IndexController {
@@ -44,8 +45,8 @@ public class IndexController {
         try{
             if (username.equals("") || password.equals("")) throw new Exception("Invalid username or password");
             // check login
-
-
+            String SysMsg = User.login(username, password);
+            if(!SysMsg.contains("Login success")) throw new Exception(SysMsg);
         }catch (Exception e){
             Map<String, Object> response = new HashMap<>();
             response.put("success", false);
@@ -70,8 +71,8 @@ public class IndexController {
         // try register
         try{
             if (username.equals("") || password.equals("")) throw new Exception("Invalid username or password");
-
-
+            String SysMsg = User.register(username, password, age, gender, address);
+            if(!SysMsg.contains("Register success")) throw new Exception(SysMsg);
         }catch (Exception e){
             Map<String, Object> response = new HashMap<>();
             response.put("success", false);

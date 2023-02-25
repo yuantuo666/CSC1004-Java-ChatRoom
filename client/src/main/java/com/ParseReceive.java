@@ -27,6 +27,8 @@ public class ParseReceive {
                 return new String[]{"System Message", inputs[1]};
             case "Msg":
                 return new String[]{inputs[2], inputs[1]};
+            case "Heartbeat":
+                System.out.println("Heartbeat");
             default:
                 return new String[]{null,null};
         }

@@ -6,8 +6,11 @@
  */
 package com;
 
+import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.Socket;
 
@@ -22,11 +25,17 @@ public class Client {
         // create a client
         try {
             FlatLightLaf.setup();
+            try {
+                UIManager.setLookAndFeel(new FlatMacLightLaf());
+            } catch (Exception ex) {
+                System.err.println("Failed to initialize LaF");
+            }
+
             Client client = new Client();
 
             // first: try to connect server
             try {
-                client.client = new Socket("127.0.0.1", 9001);
+                Client.client = new Socket("127.0.0.1", 9001);
                 System.out.println("Connecting Server Success. Typing /register <username> <password> <age> <gender>(0:male 1:female) <address> to register in.");
                 // /register 123 321 20 0 Street.1*
             } catch (IOException e) {
@@ -42,12 +51,12 @@ public class Client {
             Thread writeThread = new Thread(writeThreadRaw);
             writeThread.start();
 
-            client.send = new Send(writeThreadRaw);
+            send = new Send(writeThreadRaw);
 
             System.out.println("Create client success.");
             // create login windows
-            client.login = new Login();
-            client.login.setVisible(true);
+            login = new Login();
+            login.setVisible(true);
 
         } catch (IOException e) {
             e.printStackTrace();

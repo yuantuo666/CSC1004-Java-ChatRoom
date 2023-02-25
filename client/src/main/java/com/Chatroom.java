@@ -13,21 +13,51 @@ import net.miginfocom.swing.*;
  * @author Yuan_Tuo
  */
 public class Chatroom extends JFrame {
+    public JScrollBar jscrollBar = null;
+
     public Chatroom() {
         initComponents();
+        // set the windows size
+        jscrollBar = scrollPane1.getVerticalScrollBar();
+        heartBeat();
+    }
+
+    private void heartBeat() {
+        final long timeInterval = 10000;
+        Runnable runnable = () -> {
+            while (true) {
+                if (Client.client != null) {
+                    Client.send.send("/heartbeat");
+                }
+                try {
+                    Thread.sleep(timeInterval);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
     }
 
     private void send(ActionEvent e) {
         String text = SendText.getText();
         // send the message
-        Client client = new Client();
-        client.send.send(text);
+        Client.send.send(text);
         // clean input
         SendText.setText("");
     }
 
     public void receive(String s){
         ReceiveText.setText(ReceiveText.getText()+"\n"+s);
+        if (jscrollBar != null) {
+            jscrollBar.setValue(jscrollBar.getMaximum());
+        }
+    }
+
+    private void thisWindowClosing(WindowEvent e) {
+        Client.send.send("/bye");
+        System.exit(0);
     }
 
     private void thisWindowClosed(WindowEvent e) {
@@ -50,6 +80,10 @@ public class Chatroom extends JFrame {
             public void windowClosed(WindowEvent e) {
                 thisWindowClosed(e);
             }
+            @Override
+            public void windowClosing(WindowEvent e) {
+                thisWindowClosing(e);
+            }
         });
         Container contentPane = getContentPane();
         contentPane.setLayout(new MigLayout(
@@ -60,16 +94,16 @@ public class Chatroom extends JFrame {
             "[82,fill]",
             // rows
             "[]" +
-            "[333]" +
+            "[394]" +
             "[]" +
-            "[]"));
+            "[60]"));
 
         //======== scrollPane1 ========
         {
             scrollPane1.setMinimumSize(new Dimension(16, 400));
 
             //---- ReceiveText ----
-            ReceiveText.setMinimumSize(new Dimension(7, 230));
+            ReceiveText.setMinimumSize(new Dimension(7, 400));
             ReceiveText.setEditable(false);
             scrollPane1.setViewportView(ReceiveText);
         }

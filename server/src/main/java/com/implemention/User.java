@@ -6,7 +6,7 @@
  */
 package com.implemention;
 
-import com.Send;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import static com.Server.clientMap;
 import static com.Server.Db;
 
+@Slf4j
 public class User {
     public static String getUser(Socket client) {
         String user = "";
@@ -25,17 +26,11 @@ public class User {
                 user = key;
             }
         }
-//        if(user == ""){
-//            Send.format(client,"SysMsg","You haven't register!");
-//        }
         return user;
     }
 
-    public static void register(String user, String password, String age, String gender, String address, Socket client) throws IOException {
+    public static String register(String user, String password, String age, String gender, String address) throws IOException {
         try {
-            // 执行查询
-            System.out.println("[Register] " + user);
-            //Statement stmt = Db.conn.createStatement();
             String sql = "insert into user (name, password, register_at, age, gender, address) values (?, ?, ?, ?, ?, ?)";
 
             PreparedStatement preparedStmt = Db.conn.prepareStatement(sql);
@@ -49,29 +44,19 @@ public class User {
 
             preparedStmt.executeUpdate();
 
-//            clientMap.put(user, client);
-            Send.format(client,"SysMsg","Register success! Login in now~");
+            log.info("[Register] " + user);
+            return "Register success! Login in now~";
         } catch (SQLException e) {
-            Send.format(client,"SysMsg","Register fail! Maybe the username had been used.");
-//            throw new RuntimeException(e);
+            return "Register fail! Maybe the username had been used.";
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
-
-        System.out.println("[Register] " + user);
-        System.out.println("Online User: " + clientMap.size());
-
     }
 
-
-
-    public static void login(String user, String password, Socket client) throws IOException {
+    public static String login(String user, String password) throws IOException {
 
         try {
-            // 执行查询
-            System.out.println("[Login] " + user);
-            //Statement stmt = Db.conn.createStatement();
             String sql = "select `name` FROM user WHERE `name` = ? AND `password` = ?";
 
             PreparedStatement preparedStmt = Db.conn.prepareStatement(sql);
@@ -80,25 +65,18 @@ public class User {
 
             ResultSet resultSet = preparedStmt.executeQuery();
 
-
             if (resultSet.next()){
-                Send.format(client,"SysMsg","Login success! Happy Chatting!");
-                clientMap.put(user, client);
+                log.info("[Login] " + user);
+                return "Login success! Happy Chatting!";
             } else {
-                Send.format(client,"SysMsg","Login fail! Please check username and password");
+                return "Login fail! Please check username and password";
             }
-
         } catch (SQLException e) {
-            e.printStackTrace();
-            Send.format(client,"SysMsg","Login fail...");
-//            throw new RuntimeException(e);
+            log.error("[Login] " + user + " " + e.getMessage());
+            return "Database Error! Please try again.";
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
-
-        System.out.println("[Login] " + user);
-        System.out.println("Online User: " + clientMap.size());
-
     }
 }

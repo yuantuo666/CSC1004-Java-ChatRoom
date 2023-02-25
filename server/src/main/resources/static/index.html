@@ -221,7 +221,13 @@
         };
         ws.onmessage = function (evt) {
             var received_msg = evt.data;
-            $("#receivedMessage").val($("#receivedMessage").val() + received_msg + "\n");
+            if (received_msg === "pong-pong-pong-pong-pong") {
+                return;
+            }
+            var element = $("#receivedMessage");
+
+            element.val(element.val() + received_msg + "\n");
+            element[0].scrollTop = element[0].scrollHeight;
         };
         ws.onclose = function () {
             // websocket is closed.
@@ -255,6 +261,11 @@
         } else {
             switchPage("login");
         }
+        setInterval(function () {
+            if (window.ws && window.ws.readyState === 1) {
+                window.ws.send("ping-ping-ping-ping-ping");
+            }
+        }, 10000);
     });
 </script>
 

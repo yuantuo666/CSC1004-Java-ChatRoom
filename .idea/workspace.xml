@@ -9,25 +9,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="finish Chatroom main windows, fix 100%CPU bug">
-      <change afterPath="$PROJECT_DIR$/web/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/Controller/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/WebSocket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/WebSocketConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="almost finish web chatroom with SpringBoot">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Chatroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Chatroom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Chatroom.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Chatroom.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Login.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Login.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/ParseReceive.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/ParseReceive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/ReadThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/ReadThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Send.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/UserInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/ExecuteClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/ExecuteClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/ParseReceive.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/ParseReceive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/implemention/Db.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/Db.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/implemention/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/Controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/Controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/WebMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/WebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/WebSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/WebSocketConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/WebSocketConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/static/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +41,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,9 +77,9 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-18",
-    "last_opened_file_path": "C:/Users/Yuan_Tuo/IdeaProjects/ChatRoom",
+    "last_opened_file_path": "C:/Users/Yuan_Tuo/IdeaProjects/ChatRoom/server/src/main/resources",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.14941406",
     "project.structure.side.proportion": "0.30724972",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -88,15 +92,20 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yuan_Tuo\IdeaProjects\ChatRoom\server\src\main\resources" />
+      <recent name="C:\Users\Yuan_Tuo\IdeaProjects\ChatRoom\server\src\main\java\com" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Yuan_Tuo\IdeaProjects\ChatRoom\web\src\main\resources\static" />
       <recent name="C:\Users\Yuan_Tuo\IdeaProjects\ChatRoom\web\src\main\static\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.Controller" />
       <recent name="com" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
+  <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Client" />
       <module name="client" />
@@ -110,38 +119,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.Login" />
-      <module name="client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.Server" />
+    <configuration name="WebMain" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
-      <method v="2" />
-    </configuration>
-    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="web" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.WebMain" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.*" />
@@ -153,19 +133,13 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Login" />
       <item itemvalue="Application.Client" />
-      <item itemvalue="Application.Server" />
-      <item itemvalue="HTTP Request.All in generated-requests" />
-      <item itemvalue="Spring Boot.Main" />
+      <item itemvalue="Spring Boot.WebMain" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.Main" />
-        <item itemvalue="HTTP Request.All in generated-requests" />
         <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server" />
-        <item itemvalue="Application.Login" />
+        <item itemvalue="Spring Boot.WebMain" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +170,7 @@
       <workItem from="1677160138740" duration="4667000" />
       <workItem from="1677210473623" duration="13253000" />
       <workItem from="1677288790751" duration="13705000" />
-      <workItem from="1677330010798" duration="4594000" />
+      <workItem from="1677330010798" duration="14916000" />
     </task>
     <task id="LOCAL-00001" summary="Support basic chatting">
       <created>1673682312435</created>
@@ -233,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677261323779</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="almost finish web chatroom with SpringBoot">
+      <created>1677334898687</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677334898687</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +249,8 @@
     <MESSAGE value="add login windows" />
     <MESSAGE value="finish Login and Register windows" />
     <MESSAGE value="finish Chatroom main windows, fix 100%CPU bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish Chatroom main windows, fix 100%CPU bug" />
+    <MESSAGE value="almost finish web chatroom with SpringBoot" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost finish web chatroom with SpringBoot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

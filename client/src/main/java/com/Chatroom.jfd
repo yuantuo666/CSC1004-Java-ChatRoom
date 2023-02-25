@@ -6,17 +6,18 @@ new FormModel {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
 			"$layoutConstraints": "hidemode 3"
 			"$columnConstraints": "[fill][615,fill][82,fill]"
-			"$rowConstraints": "[][333][][]"
+			"$rowConstraints": "[][394][][60]"
 		} ) {
 			name: "this"
 			"title": "ChatRoom"
 			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosed", "thisWindowClosed", true ) )
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosing", "thisWindowClosing", true ) )
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 				name: "scrollPane1"
 				"minimumSize": new java.awt.Dimension( 16, 400 )
 				add( new FormComponent( "javax.swing.JTextPane" ) {
 					name: "ReceiveText"
-					"minimumSize": new java.awt.Dimension( 7, 230 )
+					"minimumSize": new java.awt.Dimension( 7, 400 )
 					"editable": false
 				} )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
@@ -40,7 +41,7 @@ new FormModel {
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 680, 585 )
+			"size": new java.awt.Dimension( 700, 585 )
 		} )
 	}
 }
