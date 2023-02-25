@@ -15,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import static com.Server.clientMap;
+import static com.Server.Db;
 
 public class User {
     public static String getUser(Socket client) {
@@ -31,8 +32,6 @@ public class User {
     }
 
     public static void register(String user, String password, String age, String gender, String address, Socket client) throws IOException {
-        Db Db = new Db();
-
         try {
             // 执行查询
             System.out.println("[Register] " + user);
@@ -50,10 +49,8 @@ public class User {
 
             preparedStmt.executeUpdate();
 
-            clientMap.put(user, client);
-            Send.format(client,"SysMsg","Register success! Happy Chatting~");
-
-            Db.conn.close();
+//            clientMap.put(user, client);
+            Send.format(client,"SysMsg","Register success! Login in now~");
         } catch (SQLException e) {
             Send.format(client,"SysMsg","Register fail! Maybe the username had been used.");
 //            throw new RuntimeException(e);
@@ -62,7 +59,7 @@ public class User {
             throw new RuntimeException(e);
         }
 
-        System.out.println("[Login] " + user);
+        System.out.println("[Register] " + user);
         System.out.println("Online User: " + clientMap.size());
 
     }
@@ -70,7 +67,6 @@ public class User {
 
 
     public static void login(String user, String password, Socket client) throws IOException {
-        Db Db = new Db();
 
         try {
             // 执行查询
@@ -92,11 +88,10 @@ public class User {
                 Send.format(client,"SysMsg","Login fail! Please check username and password");
             }
 
-
-            Db.conn.close();
         } catch (SQLException e) {
+            e.printStackTrace();
             Send.format(client,"SysMsg","Login fail...");
-            throw new RuntimeException(e);
+//            throw new RuntimeException(e);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);

@@ -6,6 +6,8 @@
  */
 package com;
 
+import com.implemention.Db;
+
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
@@ -18,8 +20,20 @@ public class Server {
     // client map (user, socket)
     public static Map<String, Socket> clientMap = new ConcurrentHashMap<String, Socket>();
     public static SimpleDateFormat time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    public static Db Db;
 
     public static void main(String[] args) throws Exception {
+        // connect to database
+        try{
+            Db = new Db();
+            System.out.println("[Database] Connect success");
+        }catch (Exception e){
+            System.out.println("[Database] Connect Fail");
+            e.printStackTrace();
+            return;
+        }
+
+
         //creat thread pool
         ExecutorService executorService = Executors.newCachedThreadPool();
         //creat server socket

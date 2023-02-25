@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChatRoom</title>
+    <meta content="Yuan_Tuo" name="author">
+    <meta content="yuantuo666@gmail.com" name="author">
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css"/>
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"
+            type="application/javascript"></script>
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.3/js/bootstrap.min.js"
+            type="application/javascript"></script>
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap-sweetalert/1.0.1/sweetalert.min.js"
+            type="application/javascript"></script>
+    <link href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap-sweetalert/1.0.1/sweetalert.min.css"
+          rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="col-md-9 mx-auto mb-5 mt-5">
+        <div class="card" id="login" style="margin-top: 50px; display: none">
+            <div class="card-header">
+                <h3>ChatRoom Web Login</h3>
+            </div>
+
+            <div class="card-body">
+                <div class="form-group mb-3">
+                    <label for="username">Username</label>
+                    <input class="form-control" id="username" name="username" placeholder="Enter username" type="text">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="password">Password</label>
+                    <input class="form-control" id="password" name="password" placeholder="Password" type="password">
+                </div>
+                <button class="btn btn-primary" onclick="login()" type="submit">Submit</button>
+                <br>
+                <a href="javascript:switchPage('register')">Go To Register</a>
+            </div>
+        </div>
+        <div class="card" id="register" style="margin-top: 50px; display: none">
+            <div class="card-header">
+                <h3>ChatRoom Web Register</h3>
+            </div>
+
+            <div class="card-body">
+                <div class="form-group mb-3">
+                    <label for="username">Username</label>
+                    <input class="form-control" id="username" name="username" placeholder="Enter username" type="text">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="password">Password</label>
+                    <input class="form-control" id="password" name="password" placeholder="Password" type="password">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="password">Confirm Password</label>
+                    <input class="form-control" id="confirmPassword" name="confirmPassword"
+                           placeholder="Confirm Password"
+                           type="password">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="age">Age</label>
+                    <input class="form-control" id="age" name="age" placeholder="Enter age" type="text">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Gender</label>
+                </div>
+                <div class="form-group mb-3">
+                    <div class="form-check form-check-inline">
+                        <input checked class="form-check-input" id="genderMale" name="gender" type="radio" value="0">
+                        <label class="form-check-label" for="genderMale">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" id="genderFemale" name="gender" type="radio" value="1">
+                        <label class="form-check-label" for="genderFemale">Female</label>
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="address">Address</label>
+                    <input class="form-control" id="address" name="address" placeholder="Enter address" type="text">
+                </div>
+
+                <button class="btn btn-primary" onclick="register()" type="submit">Submit</button>
+                <br>
+                <a href="javascript:switchPage('login')">Go To Login</a>
+            </div>
+        </div>
+
+        <div class="card" id="chat" style="margin-top: 50px; display: none">
+            <div class="card-header">
+                <h3>ChatRoom Web</h3>
+            </div>
+
+            <div class="card-body">
+                <div class="mb-3">
+                    <textarea class="form-control" id="receivedMessage" readonly rows="10"></textarea>
+                </div>
+                <hr>
+                <div class="mb-3">
+                    <textarea class="form-control" id="message" rows="3"></textarea>
+                </div>
+                <button class="btn btn-primary" onclick="send()" type="submit">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // switch page
+    function switchPage(page) {
+        if (page === "login") {
+            $("#login").show();
+            $("#register").hide();
+        } else if (page === "register") {
+            $("#login").hide();
+            $("#register").show();
+        } else if (page === "chat") {
+            $("#login").hide();
+            $("#register").hide();
+            $("#chat").show();
+        }
+    }
+
+    // use jquery to submit form
+    function login() {
+        // show loading
+        var username = $("#login #username").val();
+        var password = $("#login #password").val();
+        $.ajax({
+            url: "/login",
+            type: "POST",
+            data: {
+                username: username,
+                password: password
+            },
+            success: function (data) {
+                if (data.success === true) {
+                    // use sweetalert to show success message
+                    swal({
+                        icon: 'success',
+                        title: 'Login Success',
+                        text: data.msg,
+                    });
+                    // switch page
+                    switchPage("chat");
+                    // save token
+                    sessionStorage.setItem("token", data.token);
+                    // start websocket
+                    startWebsocket();
+
+                } else {
+                    // use sweetalert to show error message
+                    swal({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: data.msg,
+                    });
+                }
+            }
+        });
+    }
+
+    // register
+    function register() {
+        var username = $("#register #username").val();
+        var password = $("#register #password").val();
+        var confirmPassword = $("#register #confirmPassword").val();
+        var gender = $('input:radio[name="gender"]:checked').val();
+        var age = $("#register #age").val();
+        var address = $("#register #address").val();
+
+        if (password !== confirmPassword) {
+            swal({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Password and Confirm Password are not the same',
+            });
+            return;
+        }
+        $.ajax({
+            url: "/register",
+            type: "POST",
+            data: {
+                username: username,
+                password: password,
+                gender: gender,
+                age: age,
+                address: address
+            },
+            success: function (data) {
+                if (data.success === true) {
+                    switchPage("index.html")
+                    swal({
+                        icon: 'success',
+                        title: 'Register Success',
+                        text: data.msg,
+                    });
+                } else {
+                    // use sweetalert to show error message
+                    swal({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: data.msg,
+                    });
+                }
+            }
+        });
+    }
+
+    function startWebsocket() {
+        var token = sessionStorage.getItem("token");
+        if (!token) {
+            swal("Please login first");
+            return;
+        }
+        // get local host and port
+        var host = window.location.host;
+        var ws = new WebSocket(`ws://${host}/ws/${token}`);
+        ws.onopen = function () {
+            window.ws = ws;
+            swal("Successfully connect to server");
+        };
+        ws.onmessage = function (evt) {
+            var received_msg = evt.data;
+            $("#receivedMessage").val($("#receivedMessage").val() + received_msg + "\n");
+        };
+        ws.onclose = function () {
+            // websocket is closed.
+            swal("Connection is closed...");
+        };
+
+    }
+
+    // send msg
+    function send() {
+        var msg = $("#message").val();
+        if (!msg) {
+            swal("Please enter message");
+            return;
+        }
+        if (!window.ws) {
+            swal("Please login first");
+            return;
+        }
+        window.ws.send(msg);
+        $("#message").val("");
+    }
+
+    // document ready
+    $(document).ready(function () {
+        var token = sessionStorage.getItem("token");
+        if (token) {
+            swal("Login with local storage token...")
+            switchPage("chat");
+            startWebsocket();
+        } else {
+            switchPage("login");
+        }
+    });
+</script>
+
+
+</body>
+</html>

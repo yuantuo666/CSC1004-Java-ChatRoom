@@ -78,6 +78,9 @@ class Send {
     }
     public static void format(WriteThread server, String type, String msg, String from, String to) throws IOException {
         msg = msg.replaceAll("\\|","\\\\|");
+        msg = msg.replaceAll("\r","");
+        msg = msg.replaceAll("\n","<br />");
+
         from = from.replaceAll("\\|","\\\\|");
         to = to.replaceAll("\\|","\\\\|");
         if (from.isEmpty()) from = "null";

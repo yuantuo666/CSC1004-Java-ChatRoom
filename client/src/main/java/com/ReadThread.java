@@ -54,8 +54,8 @@ class ReadThread implements Runnable {
                 SimpleDateFormat sdf = new SimpleDateFormat();
                 sdf.applyPattern("yyyy/MM/dd HH:mm:ss");
                 Date date = new Date();
-
-                client.chatroom.receive(Msg[0]+ " " +sdf.format(date) +"\n"+Msg[1]+"\n");
+                System.out.println(Msg[0]+ " " +sdf.format(date) +"\n"+Msg[1]);
+                if(client.chatroom != null) client.chatroom.receive(Msg[0]+ " " +sdf.format(date) +"\n"+Msg[1]+"\n");
             }
         } catch (IOException e) {
             e.printStackTrace();

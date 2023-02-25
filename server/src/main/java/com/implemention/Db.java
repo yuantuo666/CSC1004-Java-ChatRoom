@@ -8,10 +8,11 @@ package com.implemention;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class Db {
     Connection conn;
-    public Db() {
+    public Db() throws SQLException, ClassNotFoundException {
         String driverName = "com.mysql.cj.jdbc.Driver";
 
         String dbURL="jdbc:mysql://localhost:3306/chatroom?&useSSL=false&serverTimezone=Asia/Shanghai";
@@ -21,10 +22,8 @@ public class Db {
         try {
             Class.forName(driverName);
             conn = DriverManager.getConnection(dbURL, userName, userPwd);
-            System.out.println("[Database] Connect success");
         }  catch (Exception e) {
-            e.printStackTrace();
-            System.out.print("[Database] Connect Fail");
+            throw e;
         }
     }
 }

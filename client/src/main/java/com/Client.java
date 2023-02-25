@@ -21,6 +21,7 @@ public class Client {
     public static void main(String[] args) {
         // create a client
         try {
+            FlatLightLaf.setup();
             Client client = new Client();
 
             // first: try to connect server
@@ -29,6 +30,7 @@ public class Client {
                 System.out.println("Connecting Server Success. Typing /register <username> <password> <age> <gender>(0:male 1:female) <address> to register in.");
                 // /register 123 321 20 0 Street.1*
             } catch (IOException e) {
+                new Dialog("Connecting server fail", "Cannot connect to server, please check network.").setVisible(true);
                 System.out.println("Connecting Server Failed.");
                 throw e;
             }
@@ -44,7 +46,6 @@ public class Client {
 
             System.out.println("Create client success.");
             // create login windows
-            FlatLightLaf.setup();
             client.login = new Login();
             client.login.setVisible(true);
 

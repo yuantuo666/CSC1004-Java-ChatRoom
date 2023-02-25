@@ -19,6 +19,7 @@ public class ParseReceive {
         for (int i = 0; i < inputs.length; i++) {
             if(inputs[i].equals("null")) inputs[i]="";
             inputs[i]=inputs[i].replaceAll("\\\\\\|","|");
+            inputs[i] = inputs[i].replaceAll("<br />","\n");
         }
 
         switch (inputs[0]){

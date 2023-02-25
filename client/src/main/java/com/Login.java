@@ -22,11 +22,6 @@ public class Login extends JFrame {
         initComponents();
     }
 
-    public static void main(String[] args) {
-        FlatLightLaf.setup();
-        new Login().setVisible(true);
-    }
-
     private void login(ActionEvent e) {
         System.out.println(username.getText()+password.getText());
         client.send.send("/login "+username.getText()+" "+password.getText());
