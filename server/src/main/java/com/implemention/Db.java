@@ -16,8 +16,8 @@ public class Db {
         String driverName = "com.mysql.cj.jdbc.Driver";
 
         String dbURL="jdbc:mysql://localhost:3306/chatroom?&useSSL=false&serverTimezone=Asia/Shanghai&autoReconnect=true";
-        String userName = "root";
-        String userPwd = "root";
+        String userName = "chatroom";
+        String userPwd = "chatroom";
 
         try {
             Class.forName(driverName);

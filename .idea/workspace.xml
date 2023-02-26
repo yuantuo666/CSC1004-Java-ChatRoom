@@ -9,29 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="almost finish web chatroom with SpringBoot">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="Combine web and server side, add heartbeat">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/chatroom.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/client_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/client_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/server_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/server_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Chatroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Chatroom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Chatroom.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Chatroom.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Login.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Login.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/ParseReceive.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/ParseReceive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/ReadThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/ReadThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Send.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/UserInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/ExecuteClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/ExecuteClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/ParseReceive.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/ParseReceive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/implemention/Db.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/Db.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/implemention/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/Controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/Controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/WebMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/WebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/WebSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/WebSocketConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/WebSocketConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +49,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "DefaultHtmlFileTemplate": "HTML File",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
@@ -79,7 +66,7 @@
     "jdk.selected.JAVA_MODULE": "openjdk-18",
     "last_opened_file_path": "C:/Users/Yuan_Tuo/IdeaProjects/ChatRoom/server/src/main/resources",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.14941406",
     "project.structure.side.proportion": "0.30724972",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -170,7 +157,9 @@
       <workItem from="1677160138740" duration="4667000" />
       <workItem from="1677210473623" duration="13253000" />
       <workItem from="1677288790751" duration="13705000" />
-      <workItem from="1677330010798" duration="14916000" />
+      <workItem from="1677330010798" duration="15602000" />
+      <workItem from="1677349219820" duration="115000" />
+      <workItem from="1677381041177" duration="4543000" />
     </task>
     <task id="LOCAL-00001" summary="Support basic chatting">
       <created>1673682312435</created>
@@ -214,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677334898687</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Combine web and server side, add heartbeat">
+      <created>1677346412489</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677346412489</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,13 +240,15 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Support basic chatting" />
     <MESSAGE value="Support register and login, use MyQql as database." />
     <MESSAGE value="add login windows" />
     <MESSAGE value="finish Login and Register windows" />
     <MESSAGE value="finish Chatroom main windows, fix 100%CPU bug" />
     <MESSAGE value="almost finish web chatroom with SpringBoot" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost finish web chatroom with SpringBoot" />
+    <MESSAGE value="Combine web and server side, add heartbeat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Combine web and server side, add heartbeat" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
