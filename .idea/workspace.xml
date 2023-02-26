@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="Add README.md and SQL files">
+    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="Update README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -153,7 +153,7 @@
       <workItem from="1677288790751" duration="13705000" />
       <workItem from="1677330010798" duration="15602000" />
       <workItem from="1677349219820" duration="115000" />
-      <workItem from="1677381041177" duration="6034000" />
+      <workItem from="1677381041177" duration="6522000" />
     </task>
     <task id="LOCAL-00001" summary="Support basic chatting">
       <created>1673682312435</created>
@@ -211,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677385809168</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Update README.md">
+      <created>1677388121094</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677388121094</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +257,8 @@
     <MESSAGE value="almost finish web chatroom with SpringBoot" />
     <MESSAGE value="Combine web and server side, add heartbeat" />
     <MESSAGE value="Add README.md and SQL files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add README.md and SQL files" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

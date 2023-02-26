@@ -45,7 +45,7 @@ Build with Java and SpringBoot, we have implemented the following features:
 To get started with ChatRoom, simply download the client.jar and run it, or open the web client directly.
 
 ### 🖥️ Client
-Client is a Java application, so you need to install Java first. You can download the client.jar from [here](https://github.com/yuantuo666/CSC1004-Java-ProjectTopics/releases) and run it.
+Client is a Java application, so you need to install Java first. You can download the client.jar from [here](https://github.com/yuantuo666/CSC1004-Java-ChatRoom/releases) and run it.
 
 Note: If you want to use your own server, you need to change the server address in `client/src/main/java/com/Client.java` and build it again.
 
@@ -57,9 +57,9 @@ Note: Web Client is intergrated with the server, so only need to install the ser
 ### 📦 Server
 Server contains the database and the server, so you need to install MySQL and Java first.
 
-After installing MySQL, you need to create a database named `chatroom` and import the database.sql from [here](https://github.com/yuantuo666/CSC1004-Java-ProjectTopics/releases).
+After installing MySQL, you need to create a database named `chatroom` and import the database.sql from [here](https://github.com/yuantuo666/CSC1004-Java-ChatRoom/releases).
 
-You can download the server.jar from [here](https://github.com/yuantuo666/CSC1004-Java-ProjectTopics/releases) and run it by `java -jar server.jar`.
+You can download the server.jar from [here](https://github.com/yuantuo666/CSC1004-Java-ChatRoom/releases) and run it by `java -jar server.jar`.
 
 Note: If you want to use your own server, simply make sure port **8080** and **9001** are open. Web client will connect to the server through port **8080**, and Java client is **9001**.
 
