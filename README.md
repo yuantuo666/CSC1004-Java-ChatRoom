@@ -14,7 +14,7 @@ Thanks for checking out ChatRoom! 🎉
 
 ## 📺 Demo Video 
 
-[![ChatRoom Demo Video](https://img.youtube.com/0.jpg)]()
+[![ChatRoom Demo Video](https://i2.hdslb.com/bfs/archive/df395fcbacde96f8c05c46d3b019f9d96726cba0.jpg)](https://www.bilibili.com/video/BV1Yy4y1o7qn/)
 
 ## 📋 Features
 Build with Java and SpringBoot, we have implemented the following features:

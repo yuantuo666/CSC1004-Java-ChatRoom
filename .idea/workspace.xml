@@ -9,15 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="Combine web and server side, add heartbeat">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/chatroom.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/client_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/client_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/server_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/server_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="Add README.md and SQL files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/implemention/Db.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/Db.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +153,7 @@
       <workItem from="1677288790751" duration="13705000" />
       <workItem from="1677330010798" duration="15602000" />
       <workItem from="1677349219820" duration="115000" />
-      <workItem from="1677381041177" duration="4543000" />
+      <workItem from="1677381041177" duration="6034000" />
     </task>
     <task id="LOCAL-00001" summary="Support basic chatting">
       <created>1673682312435</created>
@@ -210,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677346412489</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add README.md and SQL files">
+      <created>1677385809168</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677385809168</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +249,8 @@
     <MESSAGE value="finish Chatroom main windows, fix 100%CPU bug" />
     <MESSAGE value="almost finish web chatroom with SpringBoot" />
     <MESSAGE value="Combine web and server side, add heartbeat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Combine web and server side, add heartbeat" />
+    <MESSAGE value="Add README.md and SQL files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add README.md and SQL files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
