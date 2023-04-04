@@ -100,7 +100,7 @@ public class Chatroom extends JFrame {
 
         //======== scrollPane1 ========
         {
-            scrollPane1.setMinimumSize(new Dimension(16, 400));
+            scrollPane1.setMinimumSize(new Dimension(16, 600));
 
             //---- ReceiveText ----
             ReceiveText.setMinimumSize(new Dimension(7, 400));

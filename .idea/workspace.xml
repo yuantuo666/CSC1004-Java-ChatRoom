@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="client:jar" />
+      <artifact name="server:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -11,7 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="020cd1af-ed09-4474-a185-1f8586f24e36" name="Changes" comment="Update README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Chatroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Chatroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Dialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Dialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/implemention/Db.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/Db.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/implemention/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/implemention/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,12 +63,12 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-18",
-    "last_opened_file_path": "C:/Users/Yuan_Tuo/IdeaProjects/ChatRoom/server/src/main/resources",
+    "last_opened_file_path": "C:/Users/Yuan_Tuo/IdeaProjects/ChatRoom",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.14941406",
     "project.structure.side.proportion": "0.30724972",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.editor",
     "spring.configuration.checksum": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "keyToStringList": {
@@ -153,7 +158,15 @@
       <workItem from="1677288790751" duration="13705000" />
       <workItem from="1677330010798" duration="15602000" />
       <workItem from="1677349219820" duration="115000" />
-      <workItem from="1677381041177" duration="6522000" />
+      <workItem from="1677381041177" duration="7131000" />
+      <workItem from="1677481969921" duration="47000" />
+      <workItem from="1678117725977" duration="229000" />
+      <workItem from="1678193118456" duration="719000" />
+      <workItem from="1678435221628" duration="30000" />
+      <workItem from="1679553199993" duration="997000" />
+      <workItem from="1679554911572" duration="138000" />
+      <workItem from="1679936373920" duration="1000" />
+      <workItem from="1680595969758" duration="8143000" />
     </task>
     <task id="LOCAL-00001" summary="Support basic chatting">
       <created>1673682312435</created>
@@ -218,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677388121094</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update README.md">
+      <created>1677388551843</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1677388551843</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

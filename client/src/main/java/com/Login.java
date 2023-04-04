@@ -23,8 +23,9 @@ public class Login extends JFrame {
     }
 
     private void login(ActionEvent e) {
-        System.out.println(username.getText()+password.getText());
-        client.send.send("/login "+username.getText()+" "+password.getText());
+        String command = "/login "+username.getText().replace(' ','_')+" "+password.getText().replace(' ','_');
+        System.out.println(command);
+        client.send.send(command);
     }
 
     private void register(ActionEvent e) {

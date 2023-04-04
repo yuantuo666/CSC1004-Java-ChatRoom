@@ -50,7 +50,7 @@ public class User {
             return "Register fail! Maybe the username had been used.";
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException(e);
+            return "Register fail! Please check your input.";
         }
     }
 
@@ -73,7 +73,7 @@ public class User {
             }
         } catch (SQLException e) {
             log.error("[Login] " + user + " " + e.getMessage());
-            return "Database Error! Please try again.";
+            return "Please try again.";
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);
